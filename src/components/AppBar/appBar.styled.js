@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 
 export const StyledAppBar = styled.header`
+  position: relative;
   display: flex;
   width: 100%;
   justify-content: flex-start;
@@ -18,7 +19,7 @@ export const StyledLink = styled(NavLink)`
   color: #2a363b;
 
   &.active {
-    color: tomato;
-    // text-decoration: none;
+    color: #471ca9;
+    text-decoration: none;
   }
 `;

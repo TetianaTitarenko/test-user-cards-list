@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import axios from 'axios';
 import UserCard from '../../components/UserCart/userCart';
+import { LoadMoreButton, ComeBackLink, StyledDiv } from './tweets.styled';
 
 const API_URL = 'https://644281d133997d3ef91207c3.mockapi.io/users';
 
@@ -15,9 +16,7 @@ export default function TweetsPage() {
     axios
       .get(`${API_URL}?limit=3&page=${page}`)
       .then(response => {
-        console.log(response);
-        // setUsers([...response.data]); // The elements are not added, the page is re-rendered again.
-        setUsers(prevUsers => [...prevUsers, ...response.data]); // Six elements are added (twice the first three elements)
+        setUsers(prevUsers => [...prevUsers, ...response.data]);
         setIsLoading(false);
       })
       .catch(error => {
@@ -25,7 +24,6 @@ export default function TweetsPage() {
         setIsLoading(false);
       });
   }, [page]);
-  console.log(users);
 
   const loadMore = () => {
     setPage(prevPage => prevPage + 1);
@@ -33,17 +31,28 @@ export default function TweetsPage() {
 
   return (
     <>
-      {isLoading ? (
-        <div>Loading...</div>
-      ) : error ? (
+      {!isLoading && <ComeBackLink to={'/'}>Come back</ComeBackLink>}
+
+      {isLoading && <div> Loading...</div>}
+      {error ? (
         <div>Error: {error.message}</div>
       ) : (
         <>
-          {users.map(user => (
-            <UserCard key={user.id} user={user} />
-          ))}
-          {/*When clicking on the button, the entire page is redrawn, but it is necessary for only the next 3 elements to be appended without redrawing the entire page.  */}
-          <button onClick={loadMore}>Load more</button>
+          <StyledDiv
+            style={{
+              display: 'flex',
+              flexWrap: 'wrap',
+              gap: '20px',
+              justifyContent: 'center',
+            }}
+          >
+            {users.map(user => (
+              <UserCard key={user.id} user={user} />
+            ))}
+          </StyledDiv>
+          {users.length > 0 && users.length < 12 && (
+            <LoadMoreButton onClick={loadMore}>Load more</LoadMoreButton>
+          )}
         </>
       )}
     </>

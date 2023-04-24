@@ -1,35 +1,64 @@
-import React from 'react';
+import { useState, useEffect } from 'react';
+import Vector from '../../img/Vector.svg';
+import picture from '../../img/picture2 1.svg';
+import {
+  Wrapper,
+  AvatarGap,
+  Avatar,
+  Button,
+  DivLine,
+  TitleTweets,
+  TitleFollowers,
+  StyledVector,
+  StyledPicture,
+} from './userCart.styled';
 
 const UserCard = ({ user }) => {
+  const [following, setFollowing] = useState(() => {
+    return (
+      JSON.parse(window.localStorage.getItem(`following_${user.id}`)) ?? false
+    );
+  });
+  const [followers, setFollowers] = useState(() => {
+    return (
+      JSON.parse(window.localStorage.getItem(`followers_${user.id}`)) ??
+      user.followers
+    );
+  });
+
+  useEffect(() => {
+    localStorage.setItem(`following_${user.id}`, JSON.stringify(following));
+  }, [following, user.id]);
+
+  useEffect(() => {
+    localStorage.setItem(`followers_${user.id}`, JSON.stringify(followers));
+  }, [followers, user.id]);
+
+  const addFollowers = () => {
+    setFollowing(!following);
+    setFollowers(prevFollowers =>
+      following ? prevFollowers - 1 : prevFollowers + 1
+    );
+  };
+
   return (
-    <div
-      style={{
-        display: 'flex',
-        alignItems: 'center',
-        backgroundColor: '#FFFFFF',
-        borderRadius: '16px',
-        padding: '16px',
-        boxShadow: '0px 4px 16px rgba(0, 0, 0, 0.1)',
-        width: '100%',
-        maxWidth: '480px',
-        boxSizing: 'border-box',
-        marginBottom: '32px',
-      }}
-    >
-      <img
-        src={user.avatar}
-        alt={user.user}
-        style={{ borderRadius: '50%', width: '64px', height: '64px' }}
-      />
-      <div style={{ marginLeft: '16px' }}>
-        <h2 style={{ fontSize: '24px', fontWeight: 'bold' }}>{user.user}</h2>
-        <div style={{ display: 'flex', alignItems: 'center' }}>
-          <p style={{ marginRight: '16px' }}>{user.tweets} Tweets</p>
-          <p>{user.followers} Followers</p>
-        </div>
-      </div>
-    </div>
+    <Wrapper>
+      <StyledVector src={Vector} alt={user.user} />
+      <StyledPicture src={picture} alt={user.user} />
+      <AvatarGap>
+        <Avatar src={user.avatar} alt={user.user} />
+      </AvatarGap>
+      <DivLine></DivLine>
+      <TitleTweets style={{ margin: '62px', marginBottom: '0px' }}>
+        {user.tweets} Tweets
+      </TitleTweets>
+      <TitleFollowers>{followers.toLocaleString()} Followers</TitleFollowers>
+      <Button onClick={addFollowers} isActiv={following === true}>
+        {following ? 'Following' : 'Follow'}
+      </Button>
+    </Wrapper>
   );
 };
+//   background: ${props => (props.isActiv ? '#5CD3A8' : '#EBD8FF')};
 
 export default UserCard;

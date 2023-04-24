@@ -6,7 +6,8 @@ export const Layout = () => {
   return (
     <div
       style={{
-        maxWidth: 960,
+        position: 'relative',
+        maxWidth: 1200,
         margin: '0 auto',
         padding: '0 16px',
         display: 'flex',
