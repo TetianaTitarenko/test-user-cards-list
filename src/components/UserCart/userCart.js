@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
-import Vector from '../../img/Vector.svg';
-import picture from '../../img/picture2 1.svg';
+import Vector from '../../img/Vector.png';
+import picture from '../../img/picture2 1.png';
 import {
   Wrapper,
   AvatarGap,
