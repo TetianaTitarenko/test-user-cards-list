@@ -103,18 +103,3 @@ export const Avatar = styled.img`
   box-shadow: 0px 4.39163px 4.39163px rgba(0, 0, 0, 0.06),
     inset 0px -2.19582px 4.39163px #ae7be3, inset 0px 4.39163;
 `;
-export const Dropdown = styled.div`
-  position: relative;
-  display: inline-block;
-`;
-
-export const DropdownItem = styled.div`
-  display: block;
-  padding: 10px;
-  cursor: pointer;
-
-  &:hover {
-    background-color: #5cd3a8;
-    color: #fff;
-  }
-`;
