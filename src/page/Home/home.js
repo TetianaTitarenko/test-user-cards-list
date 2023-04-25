@@ -1,12 +1,12 @@
-import { StyledDiv, Title, Text } from './home.styled';
+import { StyledDiv, Title, Text, Img } from './home.styled';
 
 export default function Home() {
   return (
     <StyledDiv>
       <Title>
         Welcome page{' '}
-        <span role="img" aria-label="User avatar">
-          <img
+        <span role="img" aria-label="Users">
+          <Img
             src="https://d31xsmoz1lk3y3.cloudfront.net/games/images/1455909965_Find_the_Simpsons_Characters"
             alt="Simpson cast"
           />

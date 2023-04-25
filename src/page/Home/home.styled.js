@@ -1,7 +1,8 @@
 import styled from 'styled-components';
 
 export const StyledDiv = styled.div`
-  minheight: 100vh;
+  max-height: 100%;
+  max-width: 100%;
   display: flex;
   flex-direction: column;
   alignitems: center;
@@ -11,17 +12,25 @@ export const StyledDiv = styled.div`
 export const Title = styled.h1`
   display: flex;
   flex-direction: column;
-  fontweight: 500;
-  fontsize: 48;
-  textalign: center;
+  font-weight: 500;
+  font-size: 48px;
+  text-align: center;
   color: #333333;
-  marginbottom: 32, auto;
+  margin-bottom: 32px;
+  align-items: center;
+  line-height: 1.2;
 `;
+export const Img = styled.img`
+  max-height: 100%;
+  max-width: 100%;
+  lineheight: 1.5;
+`;
+
 export const Text = styled.p`
+  height: 100%;
+  width: 100%;
   fontweight: 400;
   fontsize: 24;
-  textalign: center;
+  text-align: justify;
   color: #666666;
-  maxwidth: 600;
-  lineheight: 1.5;
 `;

@@ -12,18 +12,31 @@ export const Wrapper = styled.div`
   width: 380px;
   height: 460px;
   box-sizing: border-box;
+  transition: max-width 0.5s ease-in-out;
+  @media (max-width: 380px) {
+    width: 308px;
+  }
 `;
 
 export const StyledVector = styled.img`
   position: absolute;
   left: 20px;
   top: 20px;
+  transition: max-width 0.5s ease-in-out;
+  @media (max-width: 380px) {
+    left: 10px;
+    top: 10px;
+  }
 `;
 
 export const StyledPicture = styled.img`
   position: absolute;
   left: 36px;
   top: 28px;
+  transition: max-width 0.5s ease-in-out;
+  @media (max-width: 380px) {
+    left: 0px;
+  }
 `;
 
 export const DivLine = styled.div`

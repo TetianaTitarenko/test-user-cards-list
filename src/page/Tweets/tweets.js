@@ -32,7 +32,6 @@ export default function TweetsPage() {
   return (
     <>
       {!isLoading && <ComeBackLink to={'/'}>Come back</ComeBackLink>}
-
       {isLoading && <div> Loading...</div>}
       {error ? (
         <div>Error: {error.message}</div>
