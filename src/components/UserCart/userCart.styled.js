@@ -71,6 +71,7 @@ export const Button = styled.button`
   background: ${props => (props.isActiv ? '#5CD3A8' : '#EBD8FF')};
   box-shadow: 0px 3.43693px 3.43693px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
+  color: #373737;
 
   font-family: 'Montserrat';
   font-weight: 600;
@@ -101,4 +102,19 @@ export const Avatar = styled.img`
   background: #ebd8ff;
   box-shadow: 0px 4.39163px 4.39163px rgba(0, 0, 0, 0.06),
     inset 0px -2.19582px 4.39163px #ae7be3, inset 0px 4.39163;
+`;
+export const Dropdown = styled.div`
+  position: relative;
+  display: inline-block;
+`;
+
+export const DropdownItem = styled.div`
+  display: block;
+  padding: 10px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #5cd3a8;
+    color: #fff;
+  }
 `;

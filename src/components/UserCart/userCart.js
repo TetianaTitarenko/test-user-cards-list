@@ -59,6 +59,5 @@ const UserCard = ({ user }) => {
     </Wrapper>
   );
 };
-//   background: ${props => (props.isActiv ? '#5CD3A8' : '#EBD8FF')};
 
 export default UserCard;

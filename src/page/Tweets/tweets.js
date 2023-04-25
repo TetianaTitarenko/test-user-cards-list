@@ -38,14 +38,7 @@ export default function TweetsPage() {
         <div>Error: {error.message}</div>
       ) : (
         <>
-          <StyledDiv
-            style={{
-              display: 'flex',
-              flexWrap: 'wrap',
-              gap: '20px',
-              justifyContent: 'center',
-            }}
-          >
+          <StyledDiv>
             {users.map(user => (
               <UserCard key={user.id} user={user} />
             ))}

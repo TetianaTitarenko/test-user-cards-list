@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom';
 
 export const StyledDiv = styled.div`
   display: flex;
-  flexwrap: wrap;
+  flex-wrap: wrap;
   gap: 20px;
-  justifycontent: center;
+  justify-content: center;
 `;
 
 export const LoadMoreButton = styled.button`
@@ -14,14 +14,16 @@ export const LoadMoreButton = styled.button`
   margin-top: 20px;
   padding: 10px 20px;
   background-color: #ebd8ff;
+  border: 2px #5d32c9;
   border-radius: 5px;
-  color: #fff;
+  color: #373737;
   font-family: 'Montserrat';
   font-size: 16px;
   font-weight: 500;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
   &:hover {
+    color: #fff;
     background-color: #5d32c9;
   }
 `;

@@ -1,4 +1,3 @@
-// import { NavLink } from 'react-router-dom';
 import { StyledAppBar, StyledLink } from './appBar.styled';
 
 export const AppBar = () => {
