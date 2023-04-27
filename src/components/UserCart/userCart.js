@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import axios from 'axios';
 import Vector from '../../img/Vector.png';
 import picture from '../../img/picture2 1.png';
 import {
@@ -13,12 +14,9 @@ import {
   StyledPicture,
 } from './userCart.styled';
 
+const API_URL = 'https://644281d133997d3ef91207c3.mockapi.io/users';
+
 const UserCard = ({ user }) => {
-  const [following, setFollowing] = useState(() => {
-    return (
-      JSON.parse(window.localStorage.getItem(`following_${user.id}`)) ?? false
-    );
-  });
   const [followers, setFollowers] = useState(() => {
     return (
       JSON.parse(window.localStorage.getItem(`followers_${user.id}`)) ??
@@ -27,17 +25,25 @@ const UserCard = ({ user }) => {
   });
 
   useEffect(() => {
-    localStorage.setItem(`following_${user.id}`, JSON.stringify(following));
-  }, [following, user.id]);
-
-  useEffect(() => {
     localStorage.setItem(`followers_${user.id}`, JSON.stringify(followers));
   }, [followers, user.id]);
 
+  const updateUserFollowing = (update, userId) => {
+    const options = {
+      headers: { 'Content-Type': 'application/json' },
+    };
+
+    return axios
+      .put(`${API_URL}/${userId}`, update, options)
+      .then(response => response.data)
+      .catch(error => error.message);
+  };
+
   const addFollowers = () => {
-    setFollowing(!following);
+    user.following = !user.following;
+    updateUserFollowing({ following: user.following }, user.id);
     setFollowers(prevFollowers =>
-      following ? prevFollowers - 1 : prevFollowers + 1
+      user.following ? prevFollowers + 1 : prevFollowers - 1
     );
   };
 
@@ -53,8 +59,8 @@ const UserCard = ({ user }) => {
         {user.tweets} Tweets
       </TitleTweets>
       <TitleFollowers>{followers.toLocaleString()} Followers</TitleFollowers>
-      <Button onClick={addFollowers} isActiv={following === true}>
-        {following ? 'Following' : 'Follow'}
+      <Button onClick={addFollowers} isActiv={user.following}>
+        {user.following ? 'Following' : 'Follow'}
       </Button>
     </Wrapper>
   );

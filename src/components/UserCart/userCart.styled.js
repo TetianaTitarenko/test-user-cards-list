@@ -92,7 +92,6 @@ export const Button = styled.button`
   line-height: 22px;
   text-transform: uppercase;
 `;
-
 export const AvatarGap = styled.div`
   position: absolute;
   top: 178px;

@@ -1,0 +1,98 @@
+[
+ {
+  "user": "Homer Simpson",
+  "avatar": "https://tse2.mm.bing.net/th?id=OIP.nzBiJCvaBlhs2Dact4x6JwHaHa&pid=Api&P=0",
+  "tweets": 97993,
+  "followers": 20343,
+  "following": false,
+  "id": "1"
+ },
+ {
+  "user": "Marge Simpson",
+  "avatar": "https://tse1.mm.bing.net/th?id=OIP.NYygT9M4zIXaPBJIeEXnMAHaHa&pid=Api&P=0",
+  "tweets": 26419,
+  "followers": 32479,
+  "following": false,
+  "id": "2"
+ },
+ {
+  "user": "Lisa Simpson",
+  "avatar": "https://tse3.mm.bing.net/th?id=OIP.cmMXRRU6a9dDoFoy5EAa4QHaHa&pid=Api&P=0",
+  "tweets": 54550,
+  "followers": 11007,
+  "following": false,
+  "id": "3"
+ },
+ {
+  "user": "Bart Simpson",
+  "avatar": "https://tse4.mm.bing.net/th?id=OIP.cguZtX0KXMmSW2LWmfI0sAHaHa&pid=Api&P=0",
+  "tweets": 68223,
+  "followers": 87128,
+  "following": false,
+  "id": "4"
+ },
+ {
+  "user": "Mr Burns",
+  "avatar": "https://img.money.com/2014/08/140821_em_simpsons_montyburns.jpg?quality=60",
+  "tweets": 54424,
+  "followers": 39492,
+  "following": false,
+  "id": "5"
+ },
+ {
+  "user": "Maggie Simpson",
+  "avatar": "https://tse2.mm.bing.net/th?id=OIP.TgBXpRP2YThZevzLzX0aPQHaHa&pid=Api&P=0",
+  "tweets": 24156,
+  "followers": 6135,
+  "following": false,
+  "id": "6"
+ },
+ {
+  "user": "Milhouse Van Houten",
+  "avatar": "https://www.pngkit.com/png/detail/271-2717394_milhouse-simpsons-as-humans.png",
+  "tweets": 44466,
+  "followers": 99547,
+  "following": false,
+  "id": "7"
+ },
+ {
+  "user": "Ned Flanders",
+  "avatar": "https://tse4.mm.bing.net/th?id=OIP.k_WwtzDsziNIzkg8A5UAAgHaHa&pid=Api&P=0",
+  "tweets": 69243,
+  "followers": 23927,
+  "following": false,
+  "id": "8"
+ },
+ {
+  "user": "Tod Flanders",
+  "avatar": "https://tse4.mm.bing.net/th?id=OIP.kj50GmgbnXDagYoAo-gjqQAAAA&pid=Api&P=0",
+  "tweets": 89929,
+  "followers": 97028,
+  "following": false,
+  "id": "9"
+ },
+ {
+  "user": "Maude Flanders",
+  "avatar": "https://tse3.explicit.bing.net/th?id=OIP.Sj6Z4b7V9uw-PFjO-9hHdwHaHa&pid=Api&P=0",
+  "tweets": 97565,
+  "followers": 44820,
+  "following": false,
+  "id": "10"
+ },
+ {
+  "user": "Luann Van Houten",
+  "avatar": "https://tse4.explicit.bing.net/th?id=OIP.P_6KEhXFcJK5ouyKUNMUWwAAAA&pid=Api&P=0",
+  "tweets": 59919,
+  "followers": 26340,
+  "following": false,
+  "id": "11"
+ },
+ {
+  "user": "Grampa Simpson",
+  "avatar": "https://tse2.mm.bing.net/th?id=OIP.xIiBLlBLS87l2IDLprvnQAHaHa&pid=Api&P=0",
+  "tweets": 79303,
+  "followers": 77176,
+  "following": false,
+  "id": "12"
+ }
+]
