@@ -2,8 +2,7 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import UserCard from '../../components/UserCart/userCart';
 import { LoadMoreButton, ComeBackLink, StyledDiv } from './tweets.styled';
-
-const API_URL = 'https://644281d133997d3ef91207c3.mockapi.io/users';
+import { API_URL } from 'components/url';
 
 export default function TweetsPage() {
   const [users, setUsers] = useState([]);

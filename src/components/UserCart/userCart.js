@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import axios from 'axios';
 import Vector from '../../img/Vector.png';
 import picture from '../../img/picture2 1.png';
 import {
@@ -13,8 +12,7 @@ import {
   StyledVector,
   StyledPicture,
 } from './userCart.styled';
-
-const API_URL = 'https://644281d133997d3ef91207c3.mockapi.io/users';
+import { updateUserFollowing } from 'components/url';
 
 const UserCard = ({ user }) => {
   const [followers, setFollowers] = useState(() => {
@@ -27,17 +25,6 @@ const UserCard = ({ user }) => {
   useEffect(() => {
     localStorage.setItem(`followers_${user.id}`, JSON.stringify(followers));
   }, [followers, user.id]);
-
-  const updateUserFollowing = (update, userId) => {
-    const options = {
-      headers: { 'Content-Type': 'application/json' },
-    };
-
-    return axios
-      .put(`${API_URL}/${userId}`, update, options)
-      .then(response => response.data)
-      .catch(error => error.message);
-  };
 
   const addFollowers = () => {
     user.following = !user.following;
